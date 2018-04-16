@@ -28,7 +28,7 @@ public class Pelicula {
 	public void setCodigoPrecio(int codigoPrecio) {
 		this.codigoPrecio = codigoPrecio;
 	}
-	
+
 	public void persist() {
 		Registrar.add("Peliculas", this);
 	}

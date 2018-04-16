@@ -25,9 +25,4 @@ public class Disco {
 	public void setPelicula(Pelicula pelicula) {
 		this.pelicula = pelicula;
 	}
-
-	// Pondría los atributos de primero
-	/*
-	 * private String numeroSerie; private Pelicula pelicula;
-	 */
 }

@@ -1,13 +1,13 @@
 package com.renta.peliculas;
 
 public class Alquiler {
-    private Disco disco;
-    private int diasAlquilado;
-    
-    public Alquiler(Disco pDisco, int pDiasAlquilado) {
-    	this.disco = pDisco;
-    	this.diasAlquilado = pDiasAlquilado;
-    }
+	private Disco disco;
+	private int diasAlquilado;
+
+	public Alquiler(Disco pDisco, int pDiasAlquilado) {
+		this.disco = pDisco;
+		this.diasAlquilado = pDiasAlquilado;
+	}
 
 	public Disco getDisco() {
 		return disco;
