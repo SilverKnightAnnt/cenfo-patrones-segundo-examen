@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class PersistenciaClientes implements Registrar {
 
-	private static HashMap Clientes = FabricaRentas.crearHashMap();
+	private static HashMap<String,Cliente> Clientes = FabricaRentas.crearHashMap();
 
 	@Override
 	public Cliente get(String nombre) {

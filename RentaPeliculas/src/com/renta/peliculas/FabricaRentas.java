@@ -3,8 +3,6 @@ package com.renta.peliculas;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-// Creo una fábrica básica para evitar la dependencia del new lo más posible
-// y así crear los objetos de manera más dinámica
 public class FabricaRentas {
 
 	public static ArrayList crearArrayList() {
