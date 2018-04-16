@@ -29,18 +29,18 @@ public class Pelicula {
 		this.codigoPrecio = codigoPrecio;
 	}
 
+	// Le está enviando "Movies", pero en el get está recibiendo "Peliculas"
+	// por ende hay incoherencia entre lo que manda contra lo que obtiene.
+	/*
+	 * public void persist() { Registrar.add("Movies", this); }
+	 */
+
+	// Usaría el mismo nombre
 	public void persist() {
-		Registrar.add("Movies", this);
+		Registrar.add("Peliculas", this);
 	}
 
 	public static Pelicula get(String name) {
 		return (Pelicula) Registrar.get("Peliculas", name);
 	}
-	// Yo manejaría lo que son gets y sets en una misma sección del código
-	// para evitar confusiones dentro de este
-	/*
-	 * public String getNombre() { return nombre; }
-	 * 
-	 * public void setNombre(String nombre) { this.nombre = nombre; }
-	 */
 }
