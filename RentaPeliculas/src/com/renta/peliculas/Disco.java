@@ -5,6 +5,9 @@ public class Disco {
 	private String numeroSerie;
 	private Pelicula pelicula;
 
+	public Disco() {
+		
+	}
 	public Disco(String pNumeroSerie, Pelicula pPelicula) {
 		this.numeroSerie = pNumeroSerie;
 		this.pelicula = pPelicula;

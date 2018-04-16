@@ -5,8 +5,11 @@ import java.util.ArrayList;
 public class Cliente {
 
 	private String nombre;
-	private ArrayList<Alquiler> alquileres = new ArrayList<>();
+	private ArrayList<Alquiler> alquileres = FabricaRentas.crearArrayList();
 
+	public Cliente() {
+		
+	}
 	public Cliente(String pNombre) {
 		this.nombre = pNombre;
 	}
@@ -29,13 +32,13 @@ public class Cliente {
 
 	public void persist() {		
 
-		PersistenciaClientes pc = new PersistenciaClientes();
+		PersistenciaClientes pc = FabricaRentas.crearPersistenciaClientes();
 		pc.add(this);
 	}
 
 	public static Cliente get(String name) {
 		
-		PersistenciaClientes pc = new PersistenciaClientes();
+		PersistenciaClientes pc = FabricaRentas.crearPersistenciaClientes();
 		return pc.get(name);
 	}
 }

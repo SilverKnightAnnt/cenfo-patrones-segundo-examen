@@ -22,7 +22,7 @@ public class UITest {
 		
 		ma.statement(cliente);
 	}
-	@Test
+	@Test	
 	public void realizarAlquilerDeDosPeliculas() {		
 		ManejoAlquileres ma = new ManejoAlquileres();
 		Pelicula pelicula = new Pelicula("Harry Potter", 2);

@@ -8,6 +8,9 @@ public class Pelicula {
 	private String nombre;
 	private int codigoPrecio;
 
+	public Pelicula() {
+		
+	}
 	public Pelicula(String pNombre, int pCodigoPrecio) {
 		this.setNombre(pNombre);
 		this.setCodigoPrecio(pCodigoPrecio);
@@ -31,13 +34,13 @@ public class Pelicula {
 
 	public void persist() {
 
-		PersistenciaPeliculas pp = new PersistenciaPeliculas();
+		PersistenciaPeliculas pp = FabricaRentas.crearPersistenciaPeliculas();				
 		pp.add(this);
 	}
 
 	public static Pelicula get(String name) {
 		
-		PersistenciaPeliculas pp = new PersistenciaPeliculas();
+		PersistenciaPeliculas pp = FabricaRentas.crearPersistenciaPeliculas();
 		return pp.get(name);
 
 	}

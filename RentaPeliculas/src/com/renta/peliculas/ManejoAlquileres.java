@@ -5,7 +5,7 @@ import java.util.Iterator;
 
 public class ManejoAlquileres {
 
-	private ArrayList<Alquiler> alquileres = new ArrayList<>();
+	private ArrayList<Alquiler> alquileres = FabricaRentas.crearArrayList();
 
 	public void addRental(Alquiler arg) {
 		alquileres.add(arg);
@@ -21,8 +21,6 @@ public class ManejoAlquileres {
 			double montoAlquiler = 0;
 			Alquiler alquiler = iterator.next();
 
-			// Debido al gran tamaño del método, saqué la lógica del monto del alquiler
-			// a un método aparte para acortar un poco el tamaño del código
 			montoAlquiler = determinarMontoAlquiler(alquiler, montoAlquiler);
 
 			montoTotal += montoAlquiler;

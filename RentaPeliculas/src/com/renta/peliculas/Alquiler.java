@@ -3,6 +3,10 @@ package com.renta.peliculas;
 public class Alquiler {
 	private Disco disco;
 	private int diasAlquilado;
+	
+	public Alquiler() {
+		
+	}
 
 	public Alquiler(Disco pDisco, int pDiasAlquilado) {
 		this.disco = pDisco;
