@@ -28,14 +28,7 @@ public class Pelicula {
 	public void setCodigoPrecio(int codigoPrecio) {
 		this.codigoPrecio = codigoPrecio;
 	}
-
-	// Le está enviando "Movies", pero en el get está recibiendo "Peliculas"
-	// por ende hay incoherencia entre lo que manda contra lo que obtiene.
-	/*
-	 * public void persist() { Registrar.add("Movies", this); }
-	 */
-
-	// Usaría el mismo nombre
+	
 	public void persist() {
 		Registrar.add("Peliculas", this);
 	}
