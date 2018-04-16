@@ -30,10 +30,24 @@ public class Pelicula {
 	}
 
 	public void persist() {
-		Registrar.add("Peliculas", this);
+
+		// Ya no se llama a la clase Registrar, sino que se instancia la persistencia
+		// respectiva
+		// Registrar.add("Peliculas", this);
+
+		PersistenciaPeliculas pp = new PersistenciaPeliculas();
+		pp.add(this);
 	}
 
 	public static Pelicula get(String name) {
-		return (Pelicula) Registrar.get("Peliculas", name);
+
+		// Ya no se llama a la clase Registrar, sino que se instancia la persistencia
+		// respectiva
+		// return (Pelicula) Registrar.get("Peliculas", name);
+
+		// Y como pp ya devuelve una película no hace falta castearla de nuevo.
+		PersistenciaPeliculas pp = new PersistenciaPeliculas();
+		return pp.get(name);
+
 	}
 }
