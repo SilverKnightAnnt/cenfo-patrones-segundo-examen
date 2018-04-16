@@ -3,9 +3,6 @@ package com.renta.peliculas;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/*Esta clase se va a encargar de eliminar la dependencia que tenía el 
-Cliente de manejar sus propios alquileres y de imprimirlos, ahora ManejoAlquileres 
-tiene el método addRental() y statement()*/
 
 public class ManejoAlquileres {
 
@@ -15,7 +12,6 @@ public class ManejoAlquileres {
 		alquileres.add(arg);
 	}
 
-	//statement ahora recibe el cliente para saber a quién asignarle los alquileres.
 	public String statement(Cliente cliente) {
 		cliente.setAlquileres(alquileres);
 		double montoTotal = 0;
