@@ -1,16 +1,16 @@
 package com.renta.peliculas;
 
 public class Disco {
-    public Pelicula getPelicula() {
-    	return pelicula;
-    }
-    
-    public Disco(String pNumeroSerie, Pelicula pPelicula) {
-    	setNumeroSerie(pNumeroSerie);
-    	pelicula = pPelicula;
-    }
-    
-    public String getNumeroSerie() {
+
+	private String numeroSerie;
+	private Pelicula pelicula;
+
+	public Disco(String pNumeroSerie, Pelicula pPelicula) {
+		this.numeroSerie = pNumeroSerie;
+		this.pelicula = pPelicula;
+	}
+
+	public String getNumeroSerie() {
 		return numeroSerie;
 	}
 
@@ -18,6 +18,16 @@ public class Disco {
 		this.numeroSerie = numeroSerie;
 	}
 
-	private String numeroSerie; 
-    private Pelicula pelicula;
+	public Pelicula getPelicula() {
+		return pelicula;
+	}
+
+	public void setPelicula(Pelicula pelicula) {
+		this.pelicula = pelicula;
+	}
+
+	// Pondría los atributos de primero
+	/*
+	 * private String numeroSerie; private Pelicula pelicula;
+	 */
 }
