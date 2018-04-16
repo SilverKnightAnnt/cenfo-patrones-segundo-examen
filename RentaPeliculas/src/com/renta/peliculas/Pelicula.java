@@ -9,8 +9,12 @@ public class Pelicula {
 		private int codigoPrecio;
 
 		public Pelicula(String pNombre, int pCodigoPrecio) {
-			setNombre(pNombre);
-			codigoPrecio = pCodigoPrecio;
+			//No debería llamar al set dentro del constructor.
+			//setNombre(pNombre);
+			
+			//Por ende se sustituiría por el atributo base
+			this.nombre = pNombre;
+			this.codigoPrecio = pCodigoPrecio;
 		}
 
 		public int getCodigoPrecio() {
