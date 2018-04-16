@@ -27,23 +27,14 @@ public class Cliente {
 		this.alquileres = alquileres;
 	}
 
-	public void persist() {
-
-		// Ya no se llama a la clase Registrar, sino que se instancia la persistencia
-		// respectiva
-		// Registrar.add("Clientes", this);
+	public void persist() {		
 
 		PersistenciaClientes pc = new PersistenciaClientes();
 		pc.add(this);
 	}
 
 	public static Cliente get(String name) {
-
-		// Ya no se llama a la clase Registrar, sino que se instancia la persistencia
-		// respectiva
-		// return (Cliente) Registrar.get("Clientes", name);
-
-		// Y como pc ya devuelve un cliente no hace falta castearla de nuevo.
+		
 		PersistenciaClientes pc = new PersistenciaClientes();
 		return pc.get(name);
 	}

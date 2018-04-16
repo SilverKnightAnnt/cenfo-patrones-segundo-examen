@@ -3,7 +3,6 @@ package com.renta.peliculas;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-
 public class ManejoAlquileres {
 
 	private ArrayList<Alquiler> alquileres = new ArrayList<>();
@@ -22,23 +21,10 @@ public class ManejoAlquileres {
 			double montoAlquiler = 0;
 			Alquiler alquiler = iterator.next();
 
-			// determine amounts for each line
-			switch (alquiler.getDisco().getPelicula().getCodigoPrecio()) {
-			case Pelicula.NORMAL:
-				montoAlquiler += 2;
-				if (alquiler.getDiasAlquilado() > 2)
-					montoAlquiler += (alquiler.getDiasAlquilado() - 2) * 1.5;
-				break;
-			case Pelicula.ESTRENO:
-				montoAlquiler += alquiler.getDiasAlquilado() * 3;
-				break;
-			case Pelicula.INFANTIL:
-				montoAlquiler += 1.5;
-				if (alquiler.getDiasAlquilado() > 3)
-					montoAlquiler += (alquiler.getDiasAlquilado() - 3) * 1.5;
-				break;
+			// Debido al gran tamaño del método, saqué la lógica del monto del alquiler
+			// a un método aparte para acortar un poco el tamaño del código
+			montoAlquiler = determinarMontoAlquiler(alquiler, montoAlquiler);
 
-			}
 			montoTotal += montoAlquiler;
 
 			puntosAlquilerFrecuente++;
@@ -56,5 +42,28 @@ public class ManejoAlquileres {
 		result += "Monto total:  " + String.valueOf(montoTotal) + "\n";
 		result += "Gano " + String.valueOf(puntosAlquilerFrecuente) + " puntos por alquiler frecuente";
 		return result;
+
 	}
+
+	public double determinarMontoAlquiler(Alquiler alquiler, double montoAlquiler) {
+
+		// determine amounts for each line
+		switch (alquiler.getDisco().getPelicula().getCodigoPrecio()) {
+		case Pelicula.NORMAL:
+			montoAlquiler += 2;
+			if (alquiler.getDiasAlquilado() > 2)
+				montoAlquiler += (alquiler.getDiasAlquilado() - 2) * 1.5;
+			break;
+		case Pelicula.ESTRENO:
+			montoAlquiler += alquiler.getDiasAlquilado() * 3;
+			break;
+		case Pelicula.INFANTIL:
+			montoAlquiler += 1.5;
+			if (alquiler.getDiasAlquilado() > 3)
+				montoAlquiler += (alquiler.getDiasAlquilado() - 3) * 1.5;
+			break;
+		}
+		return montoAlquiler;
+	}
+
 }
