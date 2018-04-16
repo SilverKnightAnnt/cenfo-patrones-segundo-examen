@@ -9,7 +9,7 @@ public class Cliente {
 	private ArrayList<Alquiler> alquileres = new ArrayList<>();
 
 	public Cliente(String pNombre) {
-		this.setNombre(pNombre);
+		this.nombre = pNombre;
 	}
 
 	public String getNombre() {
